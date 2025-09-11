@@ -1,0 +1,52 @@
+
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+
+      padding: 12px 36px;
+      border-radius: 28px;
+
+      
+      /* Efek Liquid Glass */
+      background: rgba(255, 255, 255, 0.11);
+      border-radius: 31px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(1.6px);
+      -webkit-backdrop-filter: blur(1.6px);
+      border: 1px solid rgba(255, 255, 255, 0.23);
+      transform: translate(-50%, -20px);
+      animation: fadeNav 1.2s ease forwards;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.95);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 6px 16px;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        gap: 14px;
+        padding: 10px 20px;
+      }
+      nav a {
+        font-size: 14px;
+        padding: 5px 10px;
+      }
+    }
