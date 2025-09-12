@@ -6,16 +6,27 @@
   <title>Tentang - Laufey</title>
   <link rel="stylesheet" href="styles/laufey.css">
   <link rel="stylesheet" href="styles/navbar2.css">
+  <link rel="stylesheet" href="styles/btnmenu.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
+
+  <div class="toggle-wrap">
+    <button id="toggleBtn" class="toggle-btn" aria-controls="navbar" aria-expanded="true">☰</button>
+    <div id="hint" class="hint">Menu</div>
+  </div>
+
   <div class="blob a"></div>
   <div class="blob b"></div>
   <div class="topnav"></div>
   <nav>
+
+
     <button class="btnnav" onclick="openBeranda()">Beranda</button>
     <button class="btnnav" onclick="openTentang()">Tentang</button>
     <button class="btnnav" onclick="openPortofolio()">Portofolio</button>
   </nav>
+
 
   <div class="container">
     <div class="card" role="region" aria-label="Profil Laufey">
@@ -33,7 +44,7 @@
       <div class="content">
         <h2>Tentang</h2>
         <p>
-          Laufey adalah penyanyi-penulis lagu dan multi-instrumentalis Islandia-Cina yang dikenal karena menggabungkan jazz klasik dengan sentuhan pop modern.
+          Laufey adalah penyanyi-penulis lagu dan multi-instrumentalis Islandia Cina yang dikenal karena menggabungkan jazz klasik dengan sentuhan pop modern.
           Ia mulai belajar musik sejak kecil (piano & cello) dan tumbuh besar dengan pengaruh musik klasik; kemudian menarik perhatian publik lewat platform daring dan lagu-lagu yang viral di kalangan Gen Z.
         </p>
 
@@ -72,7 +83,16 @@
         window.location.href = "index.html";
       }, 600); 
     }
-     
+     const btn = document.getElementById('toggleBtn');
+     const nav = document.getElementById('nav');
+     const hint = document.getElementById('hint');
+
+     btn.addEventListener('click', () => {
+     nav.classList.toggle('hidden');
+     const expanded = nav.classList.contains('hidden') ? 'false' : 'true';
+     btn.setAttribute('aria-expanded', expanded);
+     hint.textContent = expanded === 'true' ? 'Menu' : 'Tutup';
+  });
   
    
   </script>

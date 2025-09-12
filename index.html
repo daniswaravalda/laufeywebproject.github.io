@@ -7,13 +7,23 @@
   <meta name="description" content="Halaman selamat datang berdesain liquid glass (frosted glass) ala Apple." />
   <link rel="stylesheet" href="styles/navbar.css">
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/btnmenu.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
+
+  <div class="toggle-wrap">
+    <button id="toggleBtn" class="toggle-btn" aria-controls="navbar" aria-expanded="true">☰</button>
+    <div id="hint" class="hint">Menu</div>
+  </div>
+
   <nav>
     <button class="btnnav" onclick="openBeranda()">Beranda</button>
     <button class="btnnav" onclick="openTentang()">Tentang</button>
     <button class="btnnav" onclick="openPortofolio()">Portofolio</button>
   </nav>
+
+
   <div class="blob a"></div>
   <div class="blob b"></div>
   <div class="topnav">
@@ -62,7 +72,18 @@
     }
      window.addEventListener("load", () => {
       document.body.classList.remove("page-enter");
+      
     });
+     const btn = document.getElementById('toggleBtn');
+     const nav = document.getElementById('nav');
+     const hint = document.getElementById('hint');
+
+     btn.addEventListener('click', () => {
+     nav.classList.toggle('hidden');
+     const expanded = nav.classList.contains('hidden') ? 'false' : 'true';
+     btn.setAttribute('aria-expanded', expanded);
+     hint.textContent = expanded === 'true' ? 'Menu' : 'Tutup';
+  });
    
   </script>
 </body>

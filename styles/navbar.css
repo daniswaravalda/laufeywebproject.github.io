@@ -26,6 +26,12 @@
       opacity: 0;
     }
 
+    nav.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    }
+
     nav a {
       color: rgba(255, 255, 255, 0.95);
       text-decoration: none;

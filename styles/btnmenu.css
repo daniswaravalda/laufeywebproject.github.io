@@ -1,0 +1,63 @@
+ /* WRAPPER tombol + hint */
+  .toggle-wrap {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    display: inline-block;
+  }
+
+  /* Tombol lingkaran */
+  .toggle-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #1f2937;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    transition: background .25s ease;
+  }
+  .toggle-btn:hover { background: #374151; }
+
+  /* Tooltip hint */
+  .hint {
+    position: absolute;
+    left: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px); /* start agak mundur */
+    background: rgba(31,41,55,0.95);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease, transform .35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Panah tooltip */
+  .hint::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid rgba(31,41,55,0.95);
+  }
+
+  /* Animasi masuk */
+  .toggle-wrap:hover .hint,
+  .toggle-wrap:focus-within .hint {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    pointer-events: auto;
+  }
