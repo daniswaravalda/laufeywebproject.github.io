@@ -83,6 +83,12 @@
         window.location.href = "index.html";
       }, 600); 
     }
+    function openPortofolio(){
+       document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "portofolio.html"; // ganti sesuai tujuanmu
+      }, 600); // sesuai durasi transition
+    }
      const btn = document.getElementById('toggleBtn');
      const nav = document.getElementById('nav');
      const hint = document.getElementById('hint');
