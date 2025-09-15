@@ -11,12 +11,7 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-
-<div class="toggle-wrap">
-    <button id="toggleBtn" class="toggle-btn" aria-controls="navbar" aria-expanded="true">☰</button>
-    <div id="hint" class="hint">Menu</div>
-  </div>
-
+  
   <nav>
     <button class="btnnav" onclick="openBeranda()">Beranda</button>
     <button class="btnnav" onclick="openTentang()">Tentang</button>
@@ -65,7 +60,7 @@
      nav.classList.toggle('hidden');
      const expanded = nav.classList.contains('hidden') ? 'false' : 'true';
      btn.setAttribute('aria-expanded', expanded);
-     hint.textContent = expanded === 'true' ? 'Menu' : 'Tutup';
+     hint.textContent = expanded === 'true' ? 'Menus' : 'Close';
   });
    
   </script>
