@@ -84,16 +84,6 @@
         window.location.href = "prestasi.html";
       }, 600);
     }
-     const btn = document.getElementById('toggleBtn');
-     const nav = document.getElementById('nav');
-     const hint = document.getElementById('hint');
-
-     btn.addEventListener('click', () => {
-     nav.classList.toggle('hidden');
-     const expanded = nav.classList.contains('hidden') ? 'false' : 'true';
-     btn.setAttribute('aria-expanded', expanded);
-     hint.textContent = expanded === 'true' ? 'Menu' : 'Tutup';
-  });
   
    
   </script>

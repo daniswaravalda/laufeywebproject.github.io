@@ -57,29 +57,22 @@
       blobA.style.transform = `translate(${x * 20}px, ${y * 12}px)`;
       blobB.style.transform = `translate(${x * -20}px, ${y * -12}px)`;
     });
-
     function openTentang(){
        document.body.classList.add("fade-out");
       setTimeout(() => {
         window.location.href = "tentang.html"; 
       }, 600); 
+    }
     function openPrestasi(){
        document.body.classList.add("fade-out");
       setTimeout(() => {
         window.location.href = "prestasi.html";
-      }, 600); 
+      }, 600);
     }
      window.addEventListener("load", () => {
       document.body.classList.remove("page-enter");
-      
+     
     });
-   function OpenLogin(){
-       document.body.classList.add("fade-out");
-      setTimeout(() => {
-        window.location.href = "ElainaCloud/login.html";
-      }, 600); 
-  }
-}
   </script>
 </body>
 </html>
