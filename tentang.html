@@ -19,7 +19,7 @@
 
     <button class="btnnav" onclick="openBeranda()">Beranda</button>
     <button class="btnnav" onclick="openTentang()">Tentang</button>
-    <button class="btnnav" onclick="openPortofolio()">Portofolio</button>
+    <button class="btnnav" onclick="openPortofolio()">Prestasi</button>
   </nav>
 
 
@@ -59,7 +59,7 @@
     </div>
   </div>
     <script>
-    // small interactive touches: parallax blobs & simple actions
+      
     const blobA = document.querySelector('.blob.a');
     const blobB = document.querySelector('.blob.b');
 
@@ -81,8 +81,8 @@
     function openPortofolio(){
        document.body.classList.add("fade-out");
       setTimeout(() => {
-        window.location.href = "portofolio.html"; // ganti sesuai tujuanmu
-      }, 600); // sesuai durasi transition
+        window.location.href = "prestasi.html";
+      }, 600);
     }
      const btn = document.getElementById('toggleBtn');
      const nav = document.getElementById('nav');
