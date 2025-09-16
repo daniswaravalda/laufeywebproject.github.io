@@ -1,0 +1,175 @@
+     /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      height: 100vh;
+      display: grid;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 10% 20%, rgba(98,108,255,0.10), transparent 10%),
+                  radial-gradient(900px 450px at 90% 80%, rgba(255,138,128,0.06), transparent 10%),
+                  linear-gradient(180deg,#0b1020 0%, #0f1626 100%);
+      color: #eef2ff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;align-items:center;
+      justify-content:center;
+      padding:32px;
+      overflow:hidden;
+      overflow-x: hidden;
+      transition: opacity 0.6s ease;
+    }
+    body.fade-out {
+      opacity: 0;
+    }
+    body.page-enter {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    /* Subtle animated blobs behind */
+    .blob{
+      position:absolute;filter:blur(60px);opacity:.7;mix-blend-mode:screen;pointer-events:none;
+      transform:translate3d(0,0,0);
+    }
+    .blob.a{width:520px;height:520px;left:-120px;top:-80px;background:linear-gradient(135deg,#6b8cff,#a58bff)}
+    .blob.b{width:420px;height:420px;right:-80px;bottom:-120px;background:linear-gradient(135deg,#ff9191,#ffd6a5);opacity:.5}
+    .container{
+      width:100%;
+      max-width:500px;
+    }
+    /* Center card */
+    .card{
+      width: 480px;
+     background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+     border: 1px solid rgba(255,255,255,0.08);
+     border-radius: 22px;
+     padding: 20px;
+     display: flex;
+     justify-content: center;
+     text-align: center;
+     flex-direction: column;
+     grid-template-columns: 1fr 390px;
+     gap: 28px;
+     align-items: center;
+     backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    position: relative;
+    z-index: 2;
+
+
+      opacity: 0;
+      transform: scale(0.95);
+      filter: blur(6px);
+      animation: cardIn 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s forwards;
+    }
+
+    /* Left content */
+    .hero-title{font-size:34px;line-height:1.05;margin-bottom:10px;font-weight:700;color:#fff}
+    .hero-sub{color:rgba(230,235,255,0.85);font-size:15px;margin-bottom:22px}
+
+    /* Buttons */
+    .btn-row{display:flex;gap:12px}
+    .btn{
+      padding:14px 24px;border-radius:12px;border:1px solid rgba(255,255,255,0.12);cursor:pointer;font-weight:600;backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      transition:transform .18s ease,box-shadow .18s ease,opacity .18s;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn.primary{background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));box-shadow:0 8px 18px rgba(102,88,255,0.16);color: #fff;font-size: 18;}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08)}
+    .btnnav{color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 6px 16px;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      background: none;
+      border: none;
+    }
+    /* Right panel */
+    .panel{
+      border-radius:14px;padding:81px;padding-top: 14px;padding-bottom: 14px;background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.008));
+      border:1px solid rgba(255,255,255,0.06);backdrop-filter: blur(8px);-webkit-backdrop-filter: blur(8px);
+      width: 250px;padding-left: 24px;padding-right: 20px;
+    }
+    .panel h2{font-size:13px;margin-bottom:8px;color:#f1f5ff}
+    .panel p{font-size:10px;color:rgba(230,235,255,0.85);line-height:1.2;}
+    .content{
+      padding:22px;
+      align-content: center;
+    }
+    /* Glass nav */
+    .topnav{position:absolute;left:32px;top:28px;display:flex;gap:8px;z-index:3}
+    .pill{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.06);font-size:13px}
+
+    /* Footer small */
+    .meta{margin-top:18px;font-size:12px;color:rgba(230,235,255,0.6)}
+
+    /* Animated glass sheen */
+    .sheen{position:absolute;left:-10%;top:-10%;width:120%;height:120%;pointer-events:none;background:linear-gradient(120deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02) 40%, rgba(255,255,255,0));transform:skewX(-20deg);opacity:0.08;animation:slide 8s linear infinite}
+    @keyframes slide{0%{transform:translateX(-35%) skewX(-20deg)}50%{transform:translateX(35%) skewX(-20deg)}100%{transform:translateX(-35%) skewX(-20deg)}}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr;}
+      .hero-title{font-size:26px}
+      .panel{order:2}
+    }
+
+   .img {
+    display: block;
+    margin: 0 auto;   /* bikin img di tengah */
+    border-radius: 12px;
+    max-width: 200px; /* opsional biar gak kegedean */
+}
+    /* small interactive icon */
+    .logo{display:inline-flex;align-items:center;gap:10px}
+    .logo .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(180deg,#fff,#d9e0ff);box-shadow:0 4px 12px rgba(110,90,255,0.25)}
+
+    /* subtle focus ring for accessibility */
+    .btn:focus{outline:3px solid rgba(100,88,255,0.12);outline-offset:4px}
+    
+    
+    @keyframes navIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes cardIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes imgIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes fadeNav {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -20px); /* agak ke atas */
+  }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);     /* balik ke posisi tengah */
+  }
+    }
+    @keyframes fadeNav {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px); /* agak ke atas */
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);     /* balik ke posisi tengah */
+  }
+}
