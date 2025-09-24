@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Selamat Datang — My Website</title>
+  <meta name="description" content="Halaman selamat datang berdesain liquid glass (frosted glass) ala Apple." />
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/btnmenu.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+  
+  <nav>
+    <button class="btnnav" onclick="openBeranda()">Beranda</button>
+    <button class="btnnav" onclick="openTentang()">Tentang</button>
+    <button class="btnnav" onclick="openPrestasi()">Prestasi</button>
+  </nav>
+
+
+  <div class="blob a"></div>
+  <div class="blob b"></div>
+  <div class="topnav">
+  </div>
+
+  <div class="card" role="main" aria-labelledby="welcome-title">
+    <div>
+      <div class="logo" aria-hidden="true">
+        <div class="dot"></div>
+        <div style="font-weight:700;letter-spacing:0.6px">Website Tugas</div>
+      </div>
+      <h1 id="welcome-title" class="hero-title">Selamat datang</h1>
+      <p class="hero-sub">Website ini akan membahas biografi seorang penyanyi Jazz Bossa-Nova, Laufey Lín Bing Jónsdóttir</p>
+
+      <div class="btn-row">
+        <button class="btn primary" onclick="openTentang()" aria-label="Mulai">Masuk</button>
+      </div>
+
+      <div class="meta">Danis Naren • Hak cipta © 2025</div>
+    </div>
+
+    <aside class="panel" aria-label="Informasi singkat">
+      <img src="images/laufey.jpeg"width="200x"height="200x">
+    </aside>
+
+    <div class="sheen" aria-hidden="true"></div>
+  </div>
+
+  <script>
+    // small interactive touches: parallax blobs & simple actions
+    const blobA = document.querySelector('.blob.a');
+    const blobB = document.querySelector('.blob.b');
+
+    document.addEventListener('mousemove', e => {
+      const x = (e.clientX / window.innerWidth) - 0.5;
+      const y = (e.clientY / window.innerHeight) - 0.5;
+      blobA.style.transform = `translate(${x * 20}px, ${y * 12}px)`;
+      blobB.style.transform = `translate(${x * -20}px, ${y * -12}px)`;
+    });
+    function openTentang(){
+       document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "tentang.html"; 
+      }, 600); 
+    }
+    function openPrestasi(){
+       document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "prestasi.html";
+      }, 600);
+    }
+     window.addEventListener("load", () => {
+      document.body.classList.remove("page-enter");
+     
+    });
+  </script>
+</body>
+</html>
